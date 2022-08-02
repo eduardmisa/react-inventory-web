@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useServiceFactoryContext } from "../../contexts/ServiceFactoryContext";
 import AuthorizedLayout from "../../layouts/AuthorizedLayout";
-import { IProductInfo, IProductListResponse } from "../../_api/ProductApi";
+import { IProductListResponse } from "../../_api/ProductApi";
 
 function ProductBoard() {
   const { serviceFactory } = useServiceFactoryContext();
@@ -10,7 +10,7 @@ function ProductBoard() {
 
   const navigate = useNavigate();
 
-  const createNewPreoduct = () => {
+  const createNewProduct = () => {
     navigate('create')
   }
 
@@ -25,30 +25,8 @@ function ProductBoard() {
     }
   }
 
-  const getHeaders = (): string[] => {
-    const obj: IProductInfo = {
-      uuid: '',
-      name: '',
-      description: '',
-      image: '',
-      base_price: 0,
-      has_variant: false,
-      expires_at: 0,
-      critical_level: 0,
-      tags: [],
-    }
-    return Object.keys(obj)
-  }
-
-  const [productUuid, setproductUuid] = useState<string>();
-  const [showDetails, setShowDetails] = useState<boolean>(false);
-  const toggleDetails = (selectedProductUuid?: string) => {
-    setproductUuid(selectedProductUuid);
-    setShowDetails(!showDetails);
-  }
-
   useEffect(() => {
-    fetchListData();
+    fetchListData().then();
   }, [])
 
   return (
@@ -56,7 +34,7 @@ function ProductBoard() {
       <div className="flex flex-col max-w-7xl mx-auto px-4 sm:px-6">
         <div className="content-center mb-5">
           <span className="text-5xl text-indigo-100 font-bold">Products | </span>
-          <button className="text-5xl text-indigo-100 font-medium hover:underline" onClick={createNewPreoduct}>+new</button>
+          <button className="text-5xl text-indigo-100 font-medium hover:underline" onClick={createNewProduct}>+new</button>
         </div>
 
         <div className="flex flex-col">

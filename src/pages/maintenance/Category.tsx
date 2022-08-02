@@ -37,7 +37,7 @@ function Category() {
   }
 
   useEffect(() => {
-    fetchListData();
+    fetchListData().then();
   }, [])
 
   return (

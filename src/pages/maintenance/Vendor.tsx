@@ -38,7 +38,7 @@ function Vendor() {
   }
 
   useEffect(() => {
-    fetchListData();
+    fetchListData().then();
   }, [])
 
   return (

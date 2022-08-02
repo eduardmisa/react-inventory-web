@@ -7,8 +7,6 @@ import {
 import FallbackPageSpinner from "./components/shared/FallbackPageSpinner";
 import { ProductCreateContextProvider } from "./contexts/product/ProductCreateContext";
 import { ServiceFactoryContext } from './contexts/ServiceFactoryContext';
-import {SiteContextProvider} from "./contexts/site/SiteContext";
-import {SiteComponentContextProvider} from "./contexts/site_component/SiteComponentContext";
 
 const Dashboard = lazy(() =>  import("./pages/Dashboard"));
 const Register = lazy(() =>  import('./pages/Register'));
@@ -17,13 +15,9 @@ const PageNotFound = lazy(() =>  import("./pages/PageNotFound"));
 const Location = lazy(() =>  import("./pages/maintenance/Location"));
 const Category = lazy(() =>  import("./pages/maintenance/Category"));
 const Vendor = lazy(() =>  import("./pages/maintenance/Vendor"));
-const InventoryBoard = lazy(() =>  import("./pages/inventory/InventoryBoard"));
 const ProductBoard = lazy(() =>  import("./pages/product/ProductBoard"));
 const Collection = lazy(() =>  import("./pages/maintenance/Collection"));
 const ProductCreate = lazy(() =>  import("./pages/product/ProductCreate"));
-
-const Site = lazy(() =>  import("./pages/site/index"));
-const SiteComponent = lazy(() =>  import("./pages/site_component"));
 
 function App() {
   return (
@@ -40,7 +34,6 @@ function App() {
               <Route path="/vendors" element={<Vendor/>} />
               <Route path="/collections" element={<Collection/>} />
 
-              <Route path="/inventory" element={<InventoryBoard/>} />
               <Route path="/products" element={<ProductBoard/>} />
 
               <Route path="/products/create"
@@ -49,20 +42,6 @@ function App() {
                           <ProductCreate/>
                         </ProductCreateContextProvider>
               }/>
-
-            <Route path="/site"
-                   element={
-                     <SiteContextProvider>
-                       <Site/>
-                     </SiteContextProvider>
-            }/>
-
-            <Route path="/component"
-                   element={
-                     <SiteComponentContextProvider>
-                       <SiteComponent/>
-                     </SiteComponentContextProvider>
-                   }/>
 
               <Route path="*" element={<PageNotFound/>} />
           </Routes>

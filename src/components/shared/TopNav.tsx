@@ -102,12 +102,7 @@ function TopNav() {
             </Popover.Button>
           </div>
 
-
-
           <Popover.Group as="nav" className="hidden md:flex space-x-10">
-            <Link to="/inventory" className="text-base font-medium text-gray-500 hover:text-gray-900">
-              Inventory
-            </Link>
             <Link to="/products" className="text-base font-medium text-gray-500 hover:text-gray-900">
               Products
             </Link>
@@ -223,14 +218,6 @@ function TopNav() {
             </Popover>
           </Popover.Group>
 
-          <Link to="/component" className="text-base font-medium text-gray-500 hover:text-gray-900">
-            Components
-          </Link>
-
-          <Link to="/site" className="text-base font-medium text-gray-500 hover:text-gray-900">
-            Site
-          </Link>
-
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             <Popover className="relative">
               {({ open }) => (
@@ -321,10 +308,6 @@ function TopNav() {
             </div>
             <div className="py-6 px-5 space-y-6">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <Link to="/inventory" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                  Inventory
-                </Link>
-
                 <Link to="/products" className="text-base font-medium text-gray-900 hover:text-gray-700">
                   Products
                 </Link>
@@ -337,12 +320,6 @@ function TopNav() {
                     {item.name}
                   </a>
                 ))}
-                <Link to="/component" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                  Components
-                </Link>
-                <Link to="/site" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                  Site
-                </Link>
               </div>
             <div>
           </div>

@@ -38,7 +38,7 @@ function Location() {
   }
 
   useEffect(() => {
-    fetchListData();
+    fetchListData().then()
   }, [])
 
   return (

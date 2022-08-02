@@ -75,7 +75,7 @@ export default function SideInfo(props: any) {
             return;
         }
 
-        fetchDetails();
+        fetchDetails().then();
     }, [props.detailUuid])
 
     return (

@@ -37,7 +37,7 @@ function Collection() {
   }
 
   useEffect(() => {
-    fetchListData();
+    fetchListData().then()
   }, [])
 
   return (
