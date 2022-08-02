@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { useProductCreateContext, VariantFormChangeType } from "../../../contexts/product/ProductCreateContext";
+import { useProductCreateContext, VariantFormChangeType } from "../../../contexts/ProductCreateContext";
 import CheckInput from "../../form/CheckInput";
 import GroupCard from "../../form/GroupCard";
 import TextInput from "../../form/TextInput";

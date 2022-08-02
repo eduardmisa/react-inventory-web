@@ -4,7 +4,7 @@ import ProductCreateOrganization from '../../components/product/create/ProductCr
 import ProductCreatePricing from '../../components/product/create/ProductCreatePricing';
 import ProductCreateVariant from '../../components/product/create/ProductCreateVariant';
 import ProductCreateInventory from '../../components/product/create/ProductCreateInventory';
-import { useProductCreateContext } from '../../contexts/product/ProductCreateContext';
+import { useProductCreateContext } from '../../contexts/ProductCreateContext';
 import { useEffect } from "react";
 import GroupCard from "../../components/form/GroupCard";
 import { useNavigate } from "react-router-dom";

@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import FallbackPageSpinner from "./components/shared/FallbackPageSpinner";
-import { ProductCreateContextProvider } from "./contexts/product/ProductCreateContext";
+import { ProductCreateContextProvider } from "./contexts/ProductCreateContext";
 import { ServiceFactoryContext } from './contexts/ServiceFactoryContext';
 
 const Dashboard = lazy(() =>  import("./pages/Dashboard"));

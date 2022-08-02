@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { ISelectItem, useProductCreateContext } from "../../../contexts/product/ProductCreateContext";
+import { ISelectItem, useProductCreateContext } from "../../../contexts/ProductCreateContext";
 import GroupCard from "../../form/GroupCard";
 import SelectInput from "../../form/SelectInput";
 

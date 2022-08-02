@@ -1,12 +1,12 @@
 import { ChangeEvent, createContext, Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
 import { CartesianProduct } from 'ts-combinatorics';
 import { v4 } from 'uuid';
-import { ICategoryInfo } from '../../_api/CategoryApi';
-import { IAPIBaseResponse } from '../../_api/Contracts';
-import { ILocationInfo } from '../../_api/LocationApi';
-import { IInventoryCreationRequest, IProductCreationRequest, IVariantCreationRequest, ProductCreateRequestType } from '../../_api/ProductApi';
-import { IVendorInfo } from '../../_api/VendorApi';
-import { useServiceFactoryContext } from '../ServiceFactoryContext';
+import { ICategoryInfo } from '../_api/CategoryApi';
+import { IAPIBaseResponse } from '../_api/Contracts';
+import { ILocationInfo } from '../_api/LocationApi';
+import { IInventoryCreationRequest, IProductCreationRequest, IVariantCreationRequest, ProductCreateRequestType } from '../_api/ProductApi';
+import { IVendorInfo } from '../_api/VendorApi';
+import { useServiceFactoryContext } from './ServiceFactoryContext';
 
 export interface IVariantItem {
     uuid: string;
@@ -41,7 +41,7 @@ export interface IImageItem {
     base64: string
 }
 
-export interface IProductInfoContext {
+export interface IProductCreateContext {
     locations: ILocationInfo[],
     fetchLocations: () => Promise<void>;
     selectedLocation: string;
@@ -91,9 +91,9 @@ export interface IProductInfoContext {
     SUBMIT: () => Promise<IAPIBaseResponse>;
 }
 
-const AppContext = createContext<IProductInfoContext>({} as IProductInfoContext);
+const AppContext = createContext<IProductCreateContext>({} as IProductCreateContext);
 
-export function ProductInfoContextProvider({ children }: any) {
+export function ProductCreateContextProvider({ children }: any) {
     const { serviceFactory } = useServiceFactoryContext();
     const locationService = serviceFactory.locationService;
     const vendorService = serviceFactory.vendorService;
@@ -472,10 +472,10 @@ export function ProductInfoContextProvider({ children }: any) {
     );
 }
 
-export function useProductInfoContext(): IProductInfoContext {
-    const context = useContext<IProductInfoContext>(AppContext);
+export function useProductCreateContext(): IProductCreateContext {
+    const context = useContext<IProductCreateContext>(AppContext);
     if (context === undefined) {
-        throw new Error("useProductInfoContext must be within ProductInfoContextProvider")
+        throw new Error("useProductCreateContext must be within ProductCreateContextProvider")
     }
     return context;
 }

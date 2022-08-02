@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { useProductCreateContext } from "../../../contexts/product/ProductCreateContext";
+import { useProductCreateContext } from "../../../contexts/ProductCreateContext";
 import FileInput from "../../form/FileInput";
 import GroupCard from "../../form/GroupCard";
 import TextArea from "../../form/TextArea";
